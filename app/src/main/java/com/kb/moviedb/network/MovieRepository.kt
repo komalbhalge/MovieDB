@@ -1,5 +1,12 @@
 package com.kb.moviedb.network
 
-class MovieRepository constructor(private val moviewService: MovieInterface) {
-    suspend fun getPopularMovies() = moviewService.getPopularMovies()
+class MovieRepository {
+    suspend fun getMovies() = RetrofitClient.instance.getPopularMovies()
+    companion object {
+        private var INSTANCE: MovieRepository? = null
+        fun getInstance() = INSTANCE
+            ?: MovieRepository().also {
+                INSTANCE = it
+            }
+    }
 }

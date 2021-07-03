@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
 @Entity
-data class MovieListResultItem(
+data class Movie(
 
     @PrimaryKey
     @field:SerializedName("id")
