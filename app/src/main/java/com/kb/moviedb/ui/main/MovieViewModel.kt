@@ -11,6 +11,7 @@ class MovieViewModel constructor(
     private val mainRepository: MovieRepository
 ) : ViewModel() {
 
+    private val TAG = MovieViewModel::class.qualifiedName
     val errorMessage = MutableLiveData<String>()
     val movieList = MutableLiveData<MovieListResponse>()
     var job: Job? = null
@@ -27,11 +28,11 @@ class MovieViewModel constructor(
             val response = mainRepository.getMovies()
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
-                    Log.e("TAG", "Success")
+                    Log.e(TAG, "Success")
                     movieList.postValue(response.body())
                     loading.value = false
                 } else {
-                    Log.e("TAG", "Failed")
+                    Log.e(TAG, "Failed")
                     onError("Error : ${response.message()} ")
                 }
             }

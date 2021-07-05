@@ -15,6 +15,7 @@ class MovieDetailViewModel constructor(
     private val mainRepository: MovieRepository
 ) : ViewModel() {
 
+    private val TAG = MovieDetailViewModel::class.qualifiedName
     val errorMessage = MutableLiveData<String>()
     val movieDetail = MutableLiveData<MovieDetailResponse>()
     var job: Job? = null
@@ -22,17 +23,20 @@ class MovieDetailViewModel constructor(
         onError("Exception: ${throwable.localizedMessage}")
     }
     val loading = MutableLiveData<Boolean>()
+    fun initialize() {
+        getMoviesDetails()
+    }
 
     private fun getMoviesDetails() {
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
             val response = mainRepository.getMovieDetails("337404")
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
-                    Log.e("TAG", "Success")
+                    Log.e(TAG, "Success")
                     movieDetail.postValue(response.body())
                     loading.value = false
                 } else {
-                    Log.e("TAG", "Failed")
+                    Log.e(TAG, "Failed")
                     onError("Error : ${response.message()} ")
                 }
             }
