@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFDC143C</color>
-    <color name="purple_500">#FFC61236</color>
-    <color name="purple_700">#FFB01030</color>
+    <color name="red_200">#FFDC143C</color>
+    <color name="red_500">#FFC61236</color>
+    <color name="red_700">#FFB01030</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="colorPrimary">#FF03DAC5</color>
@@ -10,4 +10,11 @@
     <color name="colorAccent">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+
+    <!--UI Designs -->
+
+    <color name="red_transparent">#9FB01030</color>
+    <color name="gray_transparent">#9F485063</color>
+    <color name="black_transparent">#9F000000</color>
 </resources>

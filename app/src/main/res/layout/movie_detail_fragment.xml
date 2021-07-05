@@ -1,6 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dummy_poster">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    android:background="@color/black_transparent"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/poster_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/poster_height">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/poster_height"
+android:src="@drawable/dummy_poster"
+            android:scaleType="fitXY"/>
 
+        <TextView
+            android:id="@+id/tv_rating"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_gravity="top|right"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape_circle"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textStyle="bold"
+            android:text="85%"
+            android:textColor="@color/red_700"
+            android:textSize="@dimen/movie_title_text_medium" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_transparent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/movie_title_text_large"
+        tools:text="Cruella"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:fontFamily="@font/straightler"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+    <TextView
+        android:id="@+id/tv_tagline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_transparent"
+        android:paddingBottom="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/movie_title_text_small"
+        tools:text="Hello Cruel World"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:fontFamily="@font/faust_italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+    <TextView
+        android:id="@+id/tv_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_transparent"
+        android:paddingBottom="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/movie_title_text_small"
+        tools:text="05/28/2021 (US), Comedy, Crime
+2h 14m"
+        android:gravity="center"
+        android:textStyle="italic"
+        android:fontFamily="@font/faust_italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+
+    <TextView
+        android:id="@+id/tv_overview_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_transparent"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:paddingStart="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/movie_title_text_medium"
+        tools:text="Overview"
+        android:gravity="left"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+    <TextView
+        android:id="@+id/tv_overview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black_transparent"
+        android:paddingTop="10dp"
+        android:paddingBottom="15dp"
+        android:paddingRight="5dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/movie_title_text_small"
+        tools:text="Determined teen Din is longing to reconnect with his childhood best friend when he meets a wish-granting dragon who shows him the magic of possibilities."
+        android:gravity="left"
+        android:paddingStart="@dimen/padding_start"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:fontFamily="@font/small_handy"
+        app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+</LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
