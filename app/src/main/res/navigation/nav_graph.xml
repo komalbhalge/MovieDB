@@ -17,6 +17,6 @@
     <fragment
         android:id="@+id/movieDetailFragment"
         android:name="com.kb.moviedb.ui.main.MovieDetailFragment"
-        android:label="RepoDetailFragment">
+        android:label="Details">
     </fragment>
 </navigation>
