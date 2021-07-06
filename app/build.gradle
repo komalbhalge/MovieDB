@@ -88,8 +88,9 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:4.7.2"
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
 
-    kapt 'com.google.dagger:hilt-android-compiler:2.33-beta'
-    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+    //TagView
+
+    implementation 'co.lujun:androidtagview:1.1.7'
 
     def nav_version = "1.0.0-alpha04"
     implementation "android.arch.navigation:navigation-fragment:$nav_version"

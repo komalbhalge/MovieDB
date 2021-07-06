@@ -1,6 +1,8 @@
 package com.kb.moviedb.network
 
-import com.google.gson.GsonBuilder
+import com.kb.moviedb.utils.Constants.Companion.API_KEY
+import com.kb.moviedb.utils.Constants.Companion.BASE_API_URL
+import com.kb.moviedb.utils.Constants.Companion.REQUEST_TIMEOUT_DURATION
 import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -46,9 +48,4 @@ class RetrofitProvider {
         chain.proceed(request)
     }
 
-    companion object {
-        private var BASE_API_URL = "https://api.themoviedb.org/3/"
-        private var API_KEY = "f9bf7d83a43baec60cd1983ac31e3e9e"
-        const val REQUEST_TIMEOUT_DURATION = 10
-    }
 }

@@ -15,6 +15,9 @@
     <!--UI Designs -->
 
     <color name="red_transparent">#9FB01030</color>
+    <color name="dark_red_transparent">#3FC61236</color>
+    <color name="white_transparent">#BFFFFFFF</color>
     <color name="gray_transparent">#9F485063</color>
     <color name="black_transparent">#9F000000</color>
+    <color name="bg_blur">#3F000000</color>
 </resources>

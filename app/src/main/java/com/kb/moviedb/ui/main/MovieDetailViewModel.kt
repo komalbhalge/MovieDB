@@ -9,7 +9,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.kb.moviedb.model.MovieDetailResponse
 import com.kb.moviedb.network.MovieRepository
+import com.kb.moviedb.utils.Constants.Companion.NO_DATA
+import com.kb.moviedb.utils.Constants.Companion.RECEIVING_DATE_FORMAT
 import kotlinx.coroutines.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MovieDetailViewModel constructor(
     private val mainRepository: MovieRepository
@@ -23,13 +27,13 @@ class MovieDetailViewModel constructor(
         onError("Exception: ${throwable.localizedMessage}")
     }
     val loading = MutableLiveData<Boolean>()
-    fun initialize() {
-        getMoviesDetails()
+    fun initialize(id: Int) {
+        getMoviesDetails(id)
     }
 
-    private fun getMoviesDetails() {
+    private fun getMoviesDetails(id: Int) {
         job = CoroutineScope(Dispatchers.IO + exceptionHandler).launch {
-            val response = mainRepository.getMovieDetails("337404")
+            val response = mainRepository.getMovieDetails(id.toString())
             withContext(Dispatchers.Main) {
                 if (response.isSuccessful) {
                     Log.e(TAG, "Success")
@@ -49,6 +53,8 @@ class MovieDetailViewModel constructor(
         text.setSpan(BulletSpan(10, Color.YELLOW), 0, 4, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         return text
     }
+
+
 
     private fun onError(message: String) {
         errorMessage.value = message

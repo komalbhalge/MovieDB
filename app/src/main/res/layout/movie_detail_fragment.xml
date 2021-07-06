@@ -4,7 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/dummy_poster">
+    android:background="@drawable/bg_movies">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/dark_red_transparent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,10 +29,12 @@
             android:layout_height="@dimen/poster_height">
 
             <ImageView
+                android:id="@+id/bg_poster"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/poster_height"
+                android:layout_height="match_parent"
                 android:scaleType="fitXY"
-                android:src="@drawable/dummy_poster" />
+                android:src="@drawable/default_movie_poster" />
+
 
             <TextView
                 android:id="@+id/tv_rating"
@@ -36,60 +46,85 @@
                 android:gravity="center"
                 android:paddingTop="5dp"
                 android:paddingBottom="5dp"
-                android:text="85%"
                 android:textColor="@color/red_700"
                 android:textSize="@dimen/movie_title_text_medium"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                tools:text="1.0" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:paddingLeft="30dp"
+                android:paddingBottom="20dp"
+                android:background="@drawable/bg_gradient_poster">
+
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/straightler"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/movie_title_text_large"
+                    android:textStyle="bold"
+                    tools:text="Cruella" />
+
+                <TextView
+                    android:id="@+id/tv_tagline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_title"
+                    android:layout_marginLeft="20dp"
+                    android:padding="3dp"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/movie_title_text_smallest"
+                    android:textStyle="italic"
+                    tools:text="Cruella" />
+
+                <TextView
+                    android:id="@+id/tv_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tagline"
+                    android:drawableStart="@drawable/ic_calender_left"
+                    android:textColor="@color/white"
+                    tools:text="June, 2020" />
+
+                <TextView
+                    android:id="@+id/tv_duration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_tagline"
+                    android:layout_marginLeft="10dp"
+                    android:layout_toRightOf="@+id/tv_date"
+                    android:drawableStart="@drawable/ic_clock_left"
+                    android:textColor="@color/white"
+                    tools:text="2 hr 14 min" />
+
+                <co.lujun.androidtagview.TagContainerLayout
+                    android:id="@+id/tags"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tv_date"
+                    android:layout_margin="0dp"
+                    android:outlineSpotShadowColor="@color/white"
+                    android:padding="5dp"
+                    app:container_enable_drag="false"
+                    app:horizontal_interval="10dp"
+                    app:tag_background_color="@color/white_transparent"
+                    app:tag_clickable="false"
+                    app:tag_text_color="@color/white"
+                    app:tag_theme="random"
+                    app:vertical_interval="5dp" />
+
+            </RelativeLayout>
         </FrameLayout>
 
-        <TextView
-            android:id="@+id/tv_title"
+        <View
+            android:id="@+id/divider"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/red_transparent"
-            android:fontFamily="@font/straightler"
-            android:gravity="center"
-            android:paddingTop="5dp"
-            android:text="Cruella"
-            android:textColor="@color/white"
-            android:textSize="@dimen/movie_title_text_large"
-            android:textStyle="bold"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
-
-        <TextView
-            android:id="@+id/tv_tagline"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/red_transparent"
-            android:fontFamily="@font/faust_italic"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:textColor="@color/white"
-            android:textSize="@dimen/movie_title_text_small"
-            android:textStyle="italic"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/poster_layout"
-            tools:text="Hello Cruel World" />
-
-        <TextView
-            android:id="@+id/tv_details"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/red_transparent"
-            android:fontFamily="@font/faust_italic"
-            android:gravity="center"
-            android:paddingBottom="5dp"
-            android:text="05/28/2021 (US), Comedy, Crime
-2h 14m"
-            android:textColor="@color/white"
-            android:textSize="@dimen/movie_title_text_small"
-            android:textStyle="italic"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+            android:layout_height="3dp"
+            android:background="@color/white" />
 
         <TextView
             android:id="@+id/tv_overview_title"
@@ -112,19 +147,19 @@
             android:id="@+id/tv_overview"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/black_transparent"
+            android:background="@drawable/bg_gradient_overview"
             android:fontFamily="@font/faust_italic"
             android:gravity="left"
             android:paddingStart="@dimen/padding_start"
             android:paddingTop="10dp"
             android:paddingRight="5dp"
-            android:paddingBottom="15dp"
-            android:text="Determined teen Din is longing to reconnect with his childhood best friend when he meets a wish-granting dragon who shows him the magic of possibilities."
+            android:paddingBottom="25dp"
             android:textColor="@color/white"
             android:textSize="@dimen/movie_title_text_small"
             android:textStyle="bold"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/poster_layout" />
+            app:layout_constraintTop_toBottomOf="@+id/poster_layout"
+            tools:text="Determined teen Din is longing to reconnect with his childhood best friend when he meets a wish-granting dragon who shows him the magic of possibilities." />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -26,7 +26,6 @@ class MovieListFragment : Fragment() {
     private val adapter = MovieListAdapter{position -> onListItemClick(position) }
     private var movieListBinding: MovieListFragmentBinding? = null
     private lateinit var viewModel: MovieViewModel
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

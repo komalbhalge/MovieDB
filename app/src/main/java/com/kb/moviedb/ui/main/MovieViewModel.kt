@@ -14,6 +14,7 @@ class MovieViewModel constructor(
     private val TAG = MovieViewModel::class.qualifiedName
     val errorMessage = MutableLiveData<String>()
     val movieList = MutableLiveData<MovieListResponse>()
+
     var job: Job? = null
     val exceptionHandler = CoroutineExceptionHandler { _, throwable ->
         onError("Exception: ${throwable.localizedMessage}")
