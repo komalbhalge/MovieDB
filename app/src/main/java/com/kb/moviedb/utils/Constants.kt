@@ -11,6 +11,6 @@ class Constants {
         internal const val POSITION_KEY = "position"
         internal const val NO_DATA = "-"
         internal const val DATE_FORMAT = "dd, MMM yyyy"
-        internal const val RECEIVING_DATE_FORMAT = "yyyy-mm-dd"
+        internal const val RECEIVING_DATE_FORMAT = "yyyy-MM-dd"
     }
 }

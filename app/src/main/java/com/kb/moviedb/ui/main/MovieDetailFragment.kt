@@ -117,7 +117,7 @@ class MovieDetailFragment : Fragment() {
             val month =
                 calendar.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.ENGLISH) ?: BLANK_DATA
             val year =
-                calendar.getDisplayName(Calendar.YEAR, Calendar.LONG, Locale.ENGLISH) ?: BLANK_DATA
+                calendar.get(Calendar.YEAR)
             return month.plus(COMMA).plus(year)
         }
         return BLANK_DATA
